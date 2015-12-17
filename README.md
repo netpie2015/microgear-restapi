@@ -34,7 +34,7 @@ $ curl -X GET "http://www.domainname.com/resources?auth=john:secret"
 ### Resource Types
 
 #### topic
-
+--
 **PUT /topic/**_{appid}_**/**_{topic}_
 
 publish message ไปยัง topic ของ appid ตามที่ระบุ
@@ -51,7 +51,7 @@ Body
 ```
 $ curl -X PUT "https://api.netpie.io/topic/myappid/home/bedroom/light?retain" -d "ON" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj 
 ```
-
+--
 **GET /topic/**_{appid}_**/**_{topic}_
 
 อ่าน message จาก appid ที่ topic ตามที่ระบุ client จะได้รับเฉพาะ message ล่าสุดที่ถูก retain ไว้ก่อนหน้านี้
@@ -69,6 +69,7 @@ $ curl -X GET "https://api.netpie.io/topic/myappid/home/bedroom/light" -u jVjzJX
 
 ---
 #### Microgear
+--
 **PUT /microgear/**_{appid}_**/alias/**_{alias}_ 
 
 ส่ง message ไปยัง microgear แบบเจาะจง alias เฉพาะ microgear ที่มีการตั้ง alias ตัวเอง เท่านั้น ที่จะได้รับ message นี้
@@ -89,6 +90,8 @@ $ curl -X PUT "https://api.netpie.io/microgear/myappid/doorlock" -d "ON" -u jVjz
 
 postbox เป็นพื้นที่สำหรับเก็บข้อมูลแบบ queue โดย message ที่ถูกส่งเข้าไปใน postbox จะถูกเก็บสะสมไว้ จนกว่าจะมีการอ่านออกไป message ที่ถูกอ่านแล้วจะหายไปจาก postbox ทันที
 
+--
+
 **PUT /postbox/**_{appid}_**/**_{postboxname}_
 
 ส่ง message ไปยัง postbox ชื่อ *postboxname* ของ *appid*
@@ -101,6 +104,7 @@ Body
 ```
 $ curl -X PUT "https://api.netpie.io/postbox/myappid/webbox?tag=error" -d "ON" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj
 ```
+--
 **GET /postbox/**_{appid}_**/**_{postboxname}_**
 
 อ่าน message ครั้งละหนึ่ง message จาก postbox ชื่อ *postboxname* ของ *appid* โดยจะเรียกตามเวลา message ที่เข้ามาก่อน จะออกมาก่อน
