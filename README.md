@@ -45,9 +45,10 @@ URL parameter
 Body
   * เป็น message ที่จะส่ง หากต้องการลบค่าที่ retain ไว้ ให้ส่งแบบ retain และใช้ body เป็น string เปล่า
 
-ตัวอย่างการเรียก REST API ด้วย cURL
+ตัวอย่างการเรียก REST API ด้วย cURL สมมติว่าเราได้สร้าง App บน NETPIE ชื่อ myappid และมี Key และ Secret ดังนี้
 ![myappid-sample](https://cloud.githubusercontent.com/assets/7685964/11860526/509ed20a-a4a8-11e5-9bda-43749e256e70.png)
 
+เราจะใช้ REST API ในการส่ง message แบบ retain ว่า "ON" ไปยัง microgear ที่ subscribe topic /home/bedroom/light ได้ด้วย cURL command line นี้
 ```
 $ curl -X PUT "https://api.netpie.io/topic/myappid/home/bedroom/light?retain" -d "ON" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj 
 ```
