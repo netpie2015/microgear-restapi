@@ -106,7 +106,7 @@ Body
 $ curl -X PUT "https://api.netpie.io/postbox/myappid/webbox?tag=error" -d "ON" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj
 ```
 --
-**GET /postbox/**_{appid}_**/**_{postboxname}_**
+**GET /postbox/**_{appid}_**/**_{postboxname}_
 
 อ่าน message ครั้งละหนึ่ง message จาก postbox ชื่อ *postboxname* ของ *appid* โดยจะเรียกตามเวลา message ที่เข้ามาก่อน จะออกมาก่อน
 
