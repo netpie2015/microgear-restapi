@@ -30,11 +30,6 @@ $ curl -X GET "http://www.domainname.com/resources" -u john:secret
 ```
 $ curl -X GET "http://www.domainname.com/resources?auth=john:secret" 
 ```
-
----
-### Rate Limit
-REST API ถูกจำกัดอัตราการเรียกใช้ที่ 10 request ใน 1 วินาที ต่อ IP หากมีการเรียก API เกินอัตราที่กำหนด จะได้รับ response เป็น 403 Rate Limit Exceeded
-
 ---
 ### Resource Types
 #### Topic
