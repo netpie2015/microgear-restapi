@@ -77,24 +77,6 @@ $ curl -X GET "https://api.netpie.io/topic/myappid/home/bedroom/light" -u jVjzJX
 ```
 
 ---
-#### Microgear
---
-**PUT /microgear/**_{appid}_**/alias/**_{alias}_ 
-
-ส่ง message ไปยัง microgear แบบเจาะจง alias เฉพาะ microgear ที่มีการตั้ง alias ตัวเอง เท่านั้น ที่จะได้รับ message นี้
-
-URL parameter
-* ไม่มี
-
-Body
-  * เป็น message ที่จะส่ง
-
-ตัวอย่างการเรียก REST API ด้วย cURL
-```
-$ curl -X PUT "https://api.netpie.io/microgear/myappid/doorlock" -d "ON" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj
-```
-
----
 #### Postbox
 --
 
