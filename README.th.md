@@ -35,12 +35,13 @@ $ curl -X GET "http://www.domainname.com/resources?auth=john:secret"
 #### Topic
 topic เป็นจุดแลกเปลี่ยน message ระหว่าง microgear ลักษณะการเขียนจะอยู่ในรูปของ path เช่น /home/bedroom/temp โดย microgear สามารถ PUT/publish, GET/subscribe ไปที่ topic นี้ได้
 
+#### Microgear
+microgear คือ device ที่เชื่อมต่อกับ NETPIE เราสามารถสื่อสารตรงไปที่ microgear โดยอ้างอิงชื่อ alias ที่ตั้งให้ device นั้น
+
 #### Postbox
 postbox เป็นพื้นที่สำหรับเก็บข้อมูลแบบ queue โดย message ที่ถูกส่งเข้าไปใน postbox จะถูกเก็บสะสมไว้ จนกว่าจะมีการอ่านออกไป message ที่ถูกอ่านแล้วจะหายไปจาก postbox ทันที เหมาะที่จะใช้เป็นเครื่องมือสื่อสารกับ microgear ที่ไม่สามารถ online ได้ตลอดเวลา เช่น PHP script
 
 ---
-
-
 #### topic
 --
 **PUT /topic/**_{appid}_**/**_{topic}_
@@ -75,6 +76,18 @@ Body
 ```
 $ curl -X GET "https://api.netpie.io/topic/myappid/home/bedroom/light" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj 
 ```
+
+---
+#### microgear
+--
+
+**PUT /microgear/**_{appid}_**/**_{gearalias}_
+
+ส่ง message ไปยัง microgear ที่ตั้งชื่อว่า *gearalias* ของ appid *appid*
+
+Body
+* message ที่จะส่ง เป็น plain text string หากมีการ encode ด้วยรูปแบบ json ทางปลายทางจะต้องนำ string ไป parse เอง
+
 
 ---
 #### Postbox
