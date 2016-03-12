@@ -34,6 +34,8 @@ $ curl -X GET "http://www.domainname.com/resources?auth=john:secret"
 #### Topic
 Topic is the location for mesage exchange among microgears. Topic name has a path format, for example, /home/bedroom/temp.  Microgear can PUT/publish, GET/subscribe to this topic. 
 
+#### Microgear
+Microgear is the device that connects to NETPIE. We can send a message directly to any microgears by addressing their alias. 
 #### Postbox
 postbox is the message storage location. Messages are stored in postbox as queue (first in, first out) until they are read. Read messages will be removed from postbox. It is suitable for microgear that cannot have real-time communication like PHP script.
 
@@ -75,6 +77,17 @@ Example
 ```
 $ curl -X GET "https://api.netpie.io/topic/myappid/home/bedroom/light" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj 
 ```
+
+---
+#### Microgear
+--
+
+**PUT /microgear/**_{appid}_**/**_{gearalias}_
+
+Send a message to a microgear of the appid *appid* whose alias is *gearalias*
+
+Body
+* message to be sent as a plain text string. If the message is encoded as JSON, the receiver has to parse the string by itself.
 
 ---
 #### Postbox
