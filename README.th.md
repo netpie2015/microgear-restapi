@@ -101,13 +101,14 @@ Body
 
 URL parameter
 * *apikey* รหัสลับที่สร้างขึ้นบนเว็บ ใช้ตรวจสอบว่ามีสิทธิ์ในการอ่าน feed จริงหรือเปล่า
+* *data* ลิสต์ของชื่อข้อมูลที่จะอ่าน ในรูปแบบ name1,name2,... หากไม่กำหนด จะอ่านทั้งหมด
+* *granularity* ค่าความละเียดของจุดข้อมูล อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่ง
+เป็นได้ดังนี้ second, minute, hour, day, week, month, year
+* *since* ระยะเวลาล่าสุดที่จะดึงข้อมูลออกมา อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่ง
+เป็นได้ดังนี้ second, minute, hour, day, week, month, year
 
 Body
-* *data* ลิสต์ของชื่อข้อมูลที่จะอ่าน ในรูปแบบ name1,name2,... หากไม่กำหนด จะอ่านทั้งหมด
-* *granularity* ค่าความละเียดของจุดข้อมูล อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่
-เป็นได้ดังนี้ second, minute, hour, day, week, month, year
-* *since* ระยะเวลาล่าสุดที่จะดึงข้อมูลออกมา อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่
-เป็นได้ดังนี้ second, minute, hour, day, week, month, year
+* ไม่มี
 
 ตัวอย่าง
 ```
@@ -127,7 +128,7 @@ Body
 
 ตัวอย่าง
 ```
-$ curl -X PUT "https://api.netpie.io/feed/myfeedid?apikey=VFxz9XaJ2h8wdJk" -d "temp=25.7,humid=52.4,light=9.2&timestamp=1475061604173" 
+$ curl -X PUT "https://api.netpie.io/feed/myfeedid?apikey=VFxz9XaJ2h8wdJk" -d "data=temp:25.7,humid:52.4,light:9.2&timestamp=1475061604173" 
 ```
 
 ---
