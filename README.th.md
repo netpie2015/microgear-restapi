@@ -97,7 +97,7 @@ Body
 
 URL parameter
 * *apikey* รหัสลับที่สร้างขึ้นบนเว็บ ใช้ตรวจสอบว่ามีสิทธิ์ในการอ่าน feed จริงหรือเปล่า
-* *filter* เปฌนตัวกรองเฉพาะข้อมูลตัวแปรที่ต้องการ ในรูปแบบ name1,name2,... หากไม่กำหนด จะได้ข้อมูลทั้งหมด
+* *filter* เป็นเงื่อนไขใช้กรองเฉพาะ attribute ที่ต้องการ ในรูปแบบ name1,name2,... หากไม่กำหนด จะได้ atribute ทั้งหมด
 * *granularity* ค่าความละเียดของจุดข้อมูล อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่ง
 เป็นได้ดังนี้ second, minute, hour, day, week, month, year
 * *since* ระยะเวลาล่าสุดที่จะดึงข้อมูลออกมา อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่ง
@@ -108,7 +108,7 @@ Body
 
 ตัวอย่าง
 ```
-$ curl -X GET "https://api.netpie.io/feed/myfeedid?apikey=VFxz9XaJ2h8wdJk&granularity=10minute&since=24hour"
+$ curl -X GET "https://api.netpie.io/feed/myfeedid?apikey=VFxz9XaJ2h8wdJk&granularity=10minute&filter=temp,humid&since=24hour"
 ```
 
 **PUT /feed/**_{feedid}_
