@@ -32,17 +32,13 @@ $ curl -X GET "http://www.domainname.com/resources?auth=john:secret"
 ```
 ---
 ### Resource Types
-#### Topic
-topic เป็นจุดแลกเปลี่ยน message ระหว่าง microgear ลักษณะการเขียนจะอยู่ในรูปของ path เช่น /home/bedroom/temp โดย microgear สามารถ PUT/publish, GET/subscribe ไปที่ topic นี้ได้
+- **Topic** เป็นจุดแลกเปลี่ยน message ระหว่าง microgear ลักษณะการเขียนจะอยู่ในรูปของ path เช่น /home/bedroom/temp โดย microgear สามารถ PUT/publish, GET/subscribe ไปที่ topic นี้ได้
 
-#### Microgear
-microgear คือ device ที่เชื่อมต่อกับ NETPIE เราสามารถสื่อสารตรงไปที่ microgear โดยอ้างอิงชื่อ alias ที่ตั้งให้ device นั้น
+- **Microgear** คือ device ที่เชื่อมต่อกับ NETPIE เราสามารถสื่อสารตรงไปที่ microgear โดยอ้างอิงชื่อ alias ที่ตั้งให้ device นั้น
 
-#### Feed
-feed เป็นพื้นที่สำหรับเก็บข้อมูลแบบ time series ซึ่งเป็นข้อมูลตัวเลขที่ stamp เวลา แต่ละ feed จะอ้างอิงด้วย feedid ที่เราสร้างขึ้นมา
+- **Feed** เป็นพื้นที่สำหรับเก็บข้อมูลแบบ time series ซึ่งเป็นข้อมูลตัวเลขที่ stamp เวลา แต่ละ feed จะอ้างอิงด้วย feedid ที่เราสร้างขึ้นมา
 
-#### Postbox
-postbox เป็นพื้นที่สำหรับเก็บข้อมูลแบบ queue โดย message ที่ถูกส่งเข้าไปใน postbox จะถูกเก็บสะสมไว้ จนกว่าจะมีการอ่านออกไป message ที่ถูกอ่านแล้วจะหายไปจาก postbox ทันที เหมาะที่จะใช้เป็นเครื่องมือสื่อสารกับ microgear ที่ไม่สามารถ online ได้ตลอดเวลา เช่น PHP script
+- **Postbox** เป็นพื้นที่สำหรับเก็บข้อมูลแบบ queue โดย message ที่ถูกส่งเข้าไปใน postbox จะถูกเก็บสะสมไว้ จนกว่าจะมีการอ่านออกไป message ที่ถูกอ่านแล้วจะหายไปจาก postbox ทันที เหมาะที่จะใช้เป็นเครื่องมือสื่อสารกับ microgear ที่ไม่สามารถ online ได้ตลอดเวลา เช่น PHP script
 
 ---
 #### Topic
@@ -101,7 +97,7 @@ Body
 
 URL parameter
 * *apikey* รหัสลับที่สร้างขึ้นบนเว็บ ใช้ตรวจสอบว่ามีสิทธิ์ในการอ่าน feed จริงหรือเปล่า
-* *data* ลิสต์ของชื่อข้อมูลที่จะอ่าน ในรูปแบบ name1,name2,... หากไม่กำหนด จะอ่านทั้งหมด
+* *filter* เปฌนตัวกรองเฉพาะข้อมูลตัวแปรที่ต้องการ ในรูปแบบ name1,name2,... หากไม่กำหนด จะได้ข้อมูลทั้งหมด
 * *granularity* ค่าความละเียดของจุดข้อมูล อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่ง
 เป็นได้ดังนี้ second, minute, hour, day, week, month, year
 * *since* ระยะเวลาล่าสุดที่จะดึงข้อมูลออกมา อยู่ในรูป ตัวเลขตามด้วยหน่วย ซึ่ง
