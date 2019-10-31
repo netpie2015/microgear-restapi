@@ -80,7 +80,6 @@ $ curl -X GET "https://api.netpie.io/topic/myappid/home/bedroom/light" -u jVjzJX
 
 ---
 #### Microgear
---
 
 **PUT /microgear/**_{appid}_**/**_{gearalias}_
 
@@ -91,7 +90,6 @@ Body
 
 ---
 #### Push Notification
---
 
 **PUT /push/owner**
 
@@ -102,7 +100,6 @@ Body
 
 ---
 #### Postbox
---
 
 **PUT /postbox/**_{appid}_**/**_{postboxname}_
 
