@@ -90,6 +90,17 @@ Body
 * message to be sent as a plain text string. If the message is encoded as JSON, the receiver has to parse the string by itself.
 
 ---
+#### Push Notification
+--
+
+**PUT /push/owner**
+
+Send a push notification to an AppID owner via a NETPIE mobiele app.
+
+Body
+* message to be sent as a plain text string.
+
+---
 #### Postbox
 --
 
