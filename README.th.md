@@ -78,8 +78,7 @@ $ curl -X GET "https://api.netpie.io/topic/myappid/home/bedroom/light" -u jVjzJX
 ```
 
 ---
-#### microgear
---
+#### Microgear
 
 **PUT /microgear/**_{appid}_**/**_{gearalias}_
 
@@ -90,8 +89,21 @@ Body
 
 
 ---
+#### Push Notification
+
+**PUT /push/owner/**
+
+ส่ง message ไปยังเจ้าของ AppID ผ่านทางโมบายแอป NETPIE
+
+Body
+* message ที่จะส่ง เป็น plain text string
+
+```
+$ curl -X PUT "https://api.netpie.io/push/owner" -d "The temperature is too high!" -u jVjzJXaJwdJKHhF:StOAKIZhXB5CaqnIHeb7s1DfiW7mQj
+```
+
+---
 #### Postbox
---
 
 **PUT /postbox/**_{appid}_**/**_{postboxname}_
 
